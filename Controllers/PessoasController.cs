@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ControleClientes.API.Persistence;
 using ControleClientes.API.Core.Entities;
-using ControleClientes.API.Models.ViewModels;
-using ControleClientes.API.Models.InputModels;
+using ControleClientes.API.Application.Models.InputModels;
+using ControleClientes.API.Application.Models.ViewModels;
 
 namespace ControleClientes.API.Controllers
 {
@@ -33,7 +33,7 @@ namespace ControleClientes.API.Controllers
             if (pessoa == null)
                 return NotFound();
             
-            var pessoaViewModel = new PessoaViewModel(pessoa.Id, pessoa.Cpf, pessoa.Nome, pessoa.Sobrenome, pessoa.DataNascimento, pessoa.Genero, pessoa.Enderecos);
+            var pessoaViewModel = new PessoaViewModel(pessoa.Nome, pessoa.Sobrenome, pessoa.Cpf, pessoa.DataNascimento, pessoa.Genero);
             return Ok(pessoaViewModel);
         }
 
@@ -46,7 +46,7 @@ namespace ControleClientes.API.Controllers
         public IActionResult Post([FromBody] CreatePessoaInputModel inputModel)
         {
             //TODO: Ter pelo menos um endereço cadastrado
-            var pessoa = new Pessoa(inputModel.Nome, inputModel.Sobrenome, inputModel.CPF, inputModel.DataNascimento, inputModel.Genero, inputModel.Enderecos);
+            var pessoa = new Pessoa(inputModel.Nome, inputModel.Sobrenome, inputModel.CPF, inputModel.DataNascimento, inputModel.Genero);
 
             if (ModelState.IsValid)
             {

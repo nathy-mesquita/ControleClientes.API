@@ -7,7 +7,7 @@ namespace ControleClientes.API.Core.Entities
 {
     public class Endereco : BaseEntity
     {
-        public Endereco(TipoEndereco tipo, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, int idPessoa) : base()
+        public Endereco(TipoEnderecoEnum tipo, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, int idPessoa) : base()
         {
             Tipo = tipo;
             Logradouro = logradouro;
@@ -20,7 +20,7 @@ namespace ControleClientes.API.Core.Entities
             IdPessoa = idPessoa;
         }
 
-        public TipoEndereco Tipo { get; set; }
+        public TipoEnderecoEnum Tipo { get; set; }
         public string Logradouro { get;  set; }
         public int Numero { get;  set; }
         public string Complemento { get;  set; }
@@ -30,7 +30,7 @@ namespace ControleClientes.API.Core.Entities
         public string Cep { get;  set; }
         public int IdPessoa { get;  set; }
 
-        public void UpdateEndereco(TipoEndereco tipo, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, int idPessoa)
+        public void UpdateEndereco(TipoEnderecoEnum tipo, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, int idPessoa)
         {
             Tipo = tipo;
             Numero = numero;

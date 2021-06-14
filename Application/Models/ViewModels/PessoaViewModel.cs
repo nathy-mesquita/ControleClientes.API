@@ -1,17 +1,15 @@
-﻿using System;
+﻿using ControleClientes.API.Core.Entities;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic; 
-using ControleClientes.API.Core.Entities;
 
-namespace ControleClientes.API.Models.ViewModels
+namespace ControleClientes.API.Application.Models.ViewModels
 {
-    //É necessário ter uma pesquisa de pessoa por CPF.
     public class PessoaViewModel
     {
-        public PessoaViewModel(int id, string nome, string sobrenome, string cpf, DateTime dataNascimento, char genero, IEnumerable<Endereco> endereco)
+        public PessoaViewModel(string nome, string sobrenome, string cpf, DateTime dataNascimento, char genero)
         {
-            Id = id;
             Nome = nome;
             Sobrenome = sobrenome;
             Cpf = cpf;

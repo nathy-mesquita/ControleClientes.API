@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using ControleClientes.API.Persistence;
 using ControleClientes.API.Core.Entities;
-using ControleClientes.API.Models.ViewModels;
-using ControleClientes.API.Models.InputModels;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using ControleClientes.API.Application.Models.ViewModels;
+using ControleClientes.API.Application.Models.InputModels;
 
 namespace ControleClientes.API.Controllers
 {

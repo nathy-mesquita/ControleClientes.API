@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ControleClientes.API.Models.ViewModels
+namespace ControleClientes.API.Application.Models.ViewModels
 {
     public class CepViewModel
     {

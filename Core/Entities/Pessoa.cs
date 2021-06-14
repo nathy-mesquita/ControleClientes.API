@@ -7,7 +7,9 @@ namespace ControleClientes.API.Core.Entities
 {
     public class Pessoa : BaseEntity
     {
-        public Pessoa(string nome, string sobrenome, string cpf, DateTime dataNascimento, char genero, IEnumerable<Endereco> endereco) : base()
+        private int idade;
+
+        public Pessoa(string nome, string sobrenome, string cpf, DateTime dataNascimento, char genero) : base()
         {
             Nome = nome;
             Sobrenome = sobrenome;
@@ -20,15 +22,23 @@ namespace ControleClientes.API.Core.Entities
 
         public string Nome { get; private set; }
         public string Sobrenome { get; private set; }
-        //Não será permitido o cadastro de duas ou mais pessoas com o mesmo CPF
         public string Cpf { get; private set; }
-        //Não será permitido o cadastro de pessoas menores de 18 anos
         public DateTime DataNascimento { get; private set; }
-        //Não é obrigatório
         public char Genero { get; private set; }
-
-        //Não será permitido o cadastro de dois endereços com o mesmo tipo para a mesma pessoa
         public IEnumerable<Endereco> Enderecos { get; set; }
+        public int Idade
+        {
+            get 
+            {
+                idade = DateTime.Now.Year - DataNascimento.Year;
+                if (DateTime.Now.DayOfYear < DataNascimento.DayOfYear)
+                {
+                    idade = idade - 1;
+                }
+                return idade;
+            }
+            private set { idade = value; }
+        }
 
 
         public int CalculaIdade(DateTime dataNascimento)

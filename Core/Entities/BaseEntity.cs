@@ -11,7 +11,6 @@ namespace ControleClientes.API.Core.Entities
         {
             CriadoEm = DateTime.Now;
             Ativo = true;
-            //Id = Guid.NewGuid();
         }
 
         public int Id { get; private set; }

@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace ControleClientes.API.Core.Entities
 {
-    public enum TipoEndereco
+    public enum TipoEnderecoEnum
     {
-        Residencial,
-        Comercial,
-        Cobranca
-    };
+        Residencial = 0,
+        Comercial = 1,
+        Cobranca = 3
+    }
 }

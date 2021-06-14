@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ControleClientes.API.Core.Entities;
-using ControleClientes.API.Models.ViewModels;
+using ControleClientes.API.Application.Models.ViewModels;
 
 namespace ControleClientes.API.Controllers
 {

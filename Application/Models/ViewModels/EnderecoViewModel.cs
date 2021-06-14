@@ -1,14 +1,14 @@
-﻿using System;
+﻿using ControleClientes.API.Core.Entities;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using ControleClientes.API.Core.Entities;
 
-namespace ControleClientes.API.Models.ViewModels
+namespace ControleClientes.API.Application.Models.ViewModels
 {
     public class EnderecoViewModel
     {
-        public EnderecoViewModel(TipoEndereco tipo, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, int idPessoa)
+        public EnderecoViewModel(TipoEnderecoEnum tipo, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string cep, int idPessoa)
         {
             Tipo = tipo;
             Logradouro = logradouro;
@@ -21,7 +21,7 @@ namespace ControleClientes.API.Models.ViewModels
             IdPessoa = idPessoa;
         }
 
-        public TipoEndereco Tipo { get; set; }
+        public TipoEnderecoEnum Tipo { get; set; }
         public string Logradouro { get; private set; }
         public int Numero { get; private set; }
         public string Complemento { get; private set; }
